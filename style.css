@@ -1,31 +1,433 @@
-/* SECTION HEADER & LOGO ALIGNMENT */
-.section-title-container {
+/* ==========================================
+   1. GLOBAL & RESET STYLES
+   ========================================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body{
+    background: #0b1120;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   2. NAVBAR STYLES
+   ========================================== */
+nav{
+    width: 100%;
     display: flex;
-    flex-direction: column; /* Mobile par stack ho jayega */
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #111827;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 50px;
+    height: auto;
+    margin-right: 12px;
+}
+
+.logo h2{
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #ffffff, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li{
+    margin-left: 25px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #9ca3af;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover{
+    color: #3b82f6;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* ==========================================
+   3. HERO & ABOUT SECTIONS
+   ========================================== */
+.hero{
+    height: 100vh;
+    background: url('images/banner.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 50px;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 17, 32, 0.78); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     text-align: center;
 }
 
+.overlay h1{
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    max-width: 900px;
+    line-height: 1.2;
+}
+
+.overlay p{
+    font-size: 22px;
+    color: #3b82f6;
+    font-weight: 600;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+}
+
+.overlay button{
+    margin-top: 35px;
+    padding: 14px 38px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+}
+
+.overlay button:hover{
+    background: #1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(37, 99, 235, 0.6);
+}
+
+.about{
+    padding: 100px 20px;
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.about h2{
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+.about p{
+    font-size: 19px;
+    color: #9ca3af;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   4. DYNAMIC SECTION HEADERS & LOGOS
+   ========================================== */
+.section{
+    padding: 100px 60px;
+}
+
+.dark{
+    background: #111827;
+}
+
+/* Fixes title breakage by separating blocks */
+.section-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 60px;
+    text-align: center;
+    width: 100%;
+}
+
 .section-logo {
-    width: 75px; /* Perfect badge size for headings */
+    width: 75px;
     height: auto;
     object-fit: contain;
-    /* Subtle glow filter jo dark background par logos ko stand out karega */
     filter: drop-shadow(0 4px 10px rgba(59, 130, 246, 0.25));
 }
 
-/* Purane default margin ko reset karne ke liye */
-.section h2, .section.dark h2 {
-    margin-bottom: 0 !important; 
+.section-title-container h2 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 0 !important;
 }
 
-/* LAPTOP & TABLET MEDIA QUERY */
-@media(min-width: 768px) {
+/* ==========================================
+   5. CARDS SYSTEM
+   ========================================== */
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card{
+    flex: 1;
+    min-width: 290px;
+    max-width: 350px;
+    background: #1f2937;
+    padding: 40px 30px;
+    border-radius: 16px;
+    border: 1px solid #2d3748;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-icon {
+    font-size: 35px;
+    color: #3b82f6;
+    margin-bottom: 20px;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    border-color: #3b82f6;
+    background: linear-gradient(145deg, #1f2937, #111827);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+}
+
+.card h3{
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.card p{
+    color: #9ca3af;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* ==========================================
+   6. GALLERY SECTION
+   ========================================== */
+.gallery-section{
+    padding: 100px 60px;
+}
+
+.gallery-section h2{
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 38px;
+}
+
+.gallery{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.gallery img{
+    width: 360px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #1f2937;
+    transition: 0.3s ease;
+}
+
+.gallery img:hover{
+    transform: scale(1.04);
+    border-color: #3b82f6;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================
+   7. LIVE STATS & CONTACT & FOOTER
+   ========================================== */
+.stats-section{
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #111827 0%, #0b1120 100%);
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    border-top: 1px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
+}
+
+.stat-box{
+    text-align: center;
+    min-width: 200px;
+}
+
+.stat-icon{
+    font-size: 40px;
+    color: #60a5fa;
+    margin-bottom: 15px;
+}
+
+.stat-box h3{
+    font-size: 45px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.stat-box p{
+    color: #9ca3af;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.contact{
+    background: #111827;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.contact h2{
+    font-size: 38px;
+    margin-bottom: 30px;
+}
+
+.contact-info p{
+    font-size: 18px;
+    margin-top: 15px;
+    color: #9ca3af;
+}
+
+.contact-info i{
+    color: #3b82f6;
+    margin-right: 8px;
+}
+
+.contact a{
+    color: #60a5fa;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.contact a:hover{
+    text-decoration: underline;
+}
+
+footer{
+    background: #090d16;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #1e293b;
+}
+
+footer p{
+    color: #4b5563;
+    font-size: 14px;
+}
+
+/* ==========================================
+   8. MEDIA QUERIES (MOBILE OPTIMIZATION)
+   ========================================== */
+@media(max-width: 768px){
+    nav{
+        padding: 15px 30px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background: #111827;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        border-top: 1px solid #1e293b;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 12px 0;
+    }
+
+    .section, .gallery-section{
+        padding: 70px 20px;
+    }
+
+    /* Fixed alignment shift for mobile layout headers */
     .section-title-container {
-        flex-direction: row; /* Badi screen par side-by-side dikhega */
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .overlay h1{
+        font-size: 34px;
+    }
+    
+    .overlay p{
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .gallery img{
+        width: 100%;
+        height: auto;
+    }
+    
+    .stats-section {
+        gap: 40px;
+    }
+}
+
+@media(min-width: 769px) {
+    .section-title-container {
+        flex-direction: row;
         gap: 20px;
     }
 }
