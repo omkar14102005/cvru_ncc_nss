@@ -1,0 +1,307 @@
+/* GLOBAL STYLES */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif; /* Fallback fonts updated */
+}
+
+body{
+    background: #0b1120;
+    color: white;
+    overflow-x: hidden; /* Page side me scroll na ho phone par */
+}
+
+/* NAVBAR */
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #111827;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Premium look */
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 50px;
+    height: auto;
+    margin-right: 12px;
+}
+
+.logo h2{
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li{
+    margin-left: 25px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #9ca3af; /* Default state me thora soft gray */
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover{
+    color: #3b82f6;
+}
+
+/* HERO SECTION */
+.hero{
+    height: 100vh;
+    background: url('images/banner.jpg') no-repeat center center/cover;
+    position: relative; /* Overlay handles relative positioning */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fixed: Overlay poori image ko cover karega taaki text hamesha readable rahe */
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 17, 32, 0.75); /* Darker backdrop blending with body */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.overlay h1{
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    max-width: 800px;
+}
+
+.overlay p{
+    font-size: 20px;
+    color: #9ca3af;
+    word-spacing: 3px;
+}
+
+.overlay button{
+    margin-top: 30px;
+    padding: 14px 35px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+.overlay button:hover{
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* ABOUT SECTION */
+.about{
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto; /* Centered layout for paragraph */
+}
+
+.about h2{
+    font-size: 36px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about p{
+    font-size: 18px;
+    color: #9ca3af;
+    line-height: 1.7;
+}
+
+/* COMMON SECTION STYLES */
+.section{
+    padding: 80px 60px;
+}
+
+.section h2{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.dark{
+    background: #111827;
+}
+
+/* CARDS STYLES */
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card{
+    flex: 1;
+    min-width: 280px;
+    max-width: 340px; /* Equal sizes for all cards */
+    background: #1f2937;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #2d3748; /* Subtle border for clean UI */
+    transition: 0.3s ease;
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    border-color: #3b82f6; /* Hover highlight */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card h3{
+    margin-bottom: 15px;
+    color: #60a5fa;
+    font-size: 20px;
+}
+
+.card p{
+    color: #9ca3af;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* GALLERY SECTION */
+.gallery-section{
+    padding: 80px 60px;
+}
+
+.gallery-section h2{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+.gallery{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Fixed: Added height & object-fit to maintain identical image ratios */
+.gallery img{
+    width: 350px;
+    height: 230px;
+    object-fit: cover; 
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.gallery img:hover{
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* CONTACT SECTION */
+.contact{
+    background: #111827;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact h2{
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact p{
+    font-size: 18px;
+    margin-top: 12px;
+    color: #9ca3af;
+}
+
+.contact a{
+    color: #3b82f6;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.contact a:hover{
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer{
+    background: #0f172a;
+    padding: 25px 20px;
+    text-align: center;
+    border-top: 1px solid #1e293b;
+}
+
+footer p{
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN (MOBILE OPTIMIZATION) */
+@media(max-width: 768px){
+    nav{
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul{
+        margin-top: 15px;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap; /* Chote screens par links wrap ho sakein */
+    }
+
+    nav ul li{
+        margin: 5px 12px; /* Fixed: Stack vertical or horizontal uniformly */
+    }
+
+    .section, .gallery-section{
+        padding: 60px 20px; /* Reduced padding on small screens */
+    }
+
+    .overlay h1{
+        font-size: 32px;
+    }
+    
+    .overlay p{
+        font-size: 16px;
+    }
+
+    .gallery img{
+        width: 100%;
+        height: auto; /* Fluid height on mobile */
+    }
+}
