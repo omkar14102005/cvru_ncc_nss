@@ -5,21 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CVRU NCC/NSS Portal</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome Icons CDN for premium UI look -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <!-- NAVBAR -->
   <nav>
     <div class="logo">
-      <!-- Added clear alt text for accessibility -->
       <img src="images/logo.png" alt="CVRU Logo">
       <h2>CVRU NCC/NSS</h2>
     </div>
-    <ul>
+    <!-- Hamburger icon for mobile screens -->
+    <div class="menu-toggle" id="mobile-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-menu">
       <li><a href="#">Home</a></li>
       <li><a href="#ncc">NCC</a></li>
       <li><a href="#nss">NSS</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#stats">Our Impact</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -29,73 +35,97 @@
     <div class="overlay">
       <h1>WELCOME TO CVRU NCC & NSS PORTAL</h1>
       <p>Discipline • Leadership • Service</p>
-      <button type="button">Explore More</button>
+      <button type="button" id="explore-btn">Explore More</button>
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- ABOUT -->
   <section class="about">
     <h2>About NCC & NSS</h2>
     <p>
-      NCC and NSS help students develop discipline, leadership, confidence, and social responsibility.
+      NCC and NSS help students develop discipline, leadership, confidence, and social responsibility. We prepare the youth of today to tackle the challenges of tomorrow.
     </p>
   </section>
 
-  <!-- NCC SECTION -->
+  <!-- NCC -->
   <section id="ncc" class="section">
     <h2>NCC SECTION</h2>
     <div class="cards">
       <div class="card">
+        <i class="fas fa-shield-alt card-icon"></i>
         <h3>Why Join NCC</h3>
-        <p>Build leadership, confidence, and discipline.</p>
+        <p>Build unshakeable leadership, absolute confidence, and military-grade discipline.</p>
       </div>
       <div class="card">
+        <i class="fas fa-award card-icon"></i>
         <h3>Benefits</h3>
-        <p>Certificates, army preference, and personality development.</p>
+        <p>Earn 'B' & 'C' certificates, get defense career preferences, and personal grooming.</p>
       </div>
       <div class="card">
+        <i class="fas fa-campground card-icon"></i>
         <h3>Activities</h3>
-        <p>Camps, parades, firing, and social service.</p>
+        <p>National camps, institutional firing practices, ceremonial parades, and adventurous trekking.</p>
       </div>
     </div>
   </section>
 
-  <!-- NSS SECTION -->
+  <!-- NSS -->
   <section id="nss" class="section dark">
     <h2>NSS SECTION</h2>
     <div class="cards">
       <div class="card">
+        <i class="fas fa-hands-helping card-icon"></i>
         <h3>Social Service</h3>
-        <p>Plantation, awareness drives, and community work.</p>
+        <p>Massive plantation drives, rural literacy awareness, and community development work.</p>
       </div>
       <div class="card">
+        <i class="fas fa-heartbeat card-icon"></i>
         <h3>Activities</h3>
-        <p>Blood donation camps and cleanliness drives.</p>
+        <p>Annual blood donation camps, disaster relief management, and cleanliness drives under Swachh Bharat.</p>
       </div>
       <div class="card">
+        <i class="fas fa-users card-icon"></i>
         <h3>Benefits</h3>
-        <p>Teamwork, communication, and leadership skills.</p>
+        <p>Develop empathetic teamwork, dynamic communication skills, and democratic leadership.</p>
       </div>
     </div>
   </section>
 
-  <!-- GALLERY SECTION -->
+  <!-- GALLERY -->
   <section id="gallery" class="gallery-section">
     <h2>Gallery</h2>
     <div class="gallery">
-      <!-- Fixed: Added meaningful alt text for images -->
-      <img src="images/img1.jpg" alt="CVRU NCC Cadets Parade">
-      <img src="images/img2.jpg" alt="CVRU NSS Plantation Drive">
-      <img src="images/img3.jpg" alt="Blood Donation Camp Activity">
+      <img src="images/img1.jpg" alt="CVRU Cadets Parade">
+      <img src="images/img2.jpg" alt="CVRU NSS Plantation">
+      <img src="images/img3.jpg" alt="Blood Donation Camp">
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
+  <!-- STATS COUNTER SECTION (NEW FEATURE) -->
+  <section id="stats" class="stats-section">
+    <div class="stat-box">
+      <i class="fas fa-user-friends stat-icon"></i>
+      <h3 class="counter" data-target="350">0</h3>
+      <p>Active Volunteers & Cadets</p>
+    </div>
+    <div class="stat-box">
+      <i class="fas fa-map-marked-alt stat-icon"></i>
+      <h3 class="counter" data-target="28">0</h3>
+      <p>Camps Completed</p>
+    </div>
+    <div class="stat-box">
+      <i class="fas fa-tint stat-icon"></i>
+      <h3 class="counter" data-target="150">0</h3>
+      <p>Blood Units Donated</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
     <div class="contact-info">
-      <p><strong>Email:</strong> <a href="mailto:info@cvrubihar.ac.in">info@cvrubihar.ac.in</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></p>
+      <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@cvrubihar.ac.in">info@cvrubihar.ac.in</a></p>
+      <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></p>
     </div>
   </section>
 
