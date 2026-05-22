@@ -155,7 +155,7 @@ nav ul li a:hover{
     line-height: 1.8;
 }
 
-/* SECTIONS & BRAND HEADERS */
+/* BRANDING HEADERS WITH LOGOS */
 .section{
     padding: 100px 60px;
 }
@@ -188,7 +188,7 @@ nav ul li a:hover{
     margin-bottom: 0 !important;
 }
 
-/* CARDS CONFIGURATION */
+/* INTERACTIVE CARDS LAYOUT */
 .cards{
     display: flex;
     justify-content: center;
@@ -197,28 +197,30 @@ nav ul li a:hover{
     width: 100%;
 }
 
-.card{
+.card-wrapper-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
     flex: 1;
     min-width: 290px;
     max-width: 350px;
+}
+
+.card{
+    width: 100%;
     background: #1f2937;
     padding: 40px 30px;
     border-radius: 16px;
     border: 1px solid #2d3748;
     transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
 }
 
 .card-icon {
     font-size: 35px;
     color: #3b82f6;
     margin-bottom: 20px;
-}
-
-.card:hover{
-    transform: translateY(-10px);
-    border-color: #3b82f6;
-    background: linear-gradient(145deg, #1f2937, #111827);
-    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
 }
 
 .card h3{
@@ -231,6 +233,30 @@ nav ul li a:hover{
     color: #9ca3af;
     line-height: 1.7;
     font-size: 15px;
+    flex-grow: 1; /* Pushes button link to bottom evenly */
+}
+
+/* Card Button Link */
+.read-more-btn {
+    display: block;
+    margin-top: 20px;
+    color: #3b82f6;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+/* HOVER INTERACTIONS */
+.card-wrapper-link:hover .card {
+    transform: translateY(-10px);
+    border-color: #3b82f6;
+    background: linear-gradient(145deg, #1f2937, #111827);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+}
+
+.card-wrapper-link:hover .read-more-btn {
+    color: #60a5fa;
+    padding-left: 5px;
 }
 
 /* GALLERY */
@@ -266,7 +292,7 @@ nav ul li a:hover{
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
-/* LIVE STATS METRICS */
+/* STATS COUNTER GRID */
 .stats-section{
     padding: 80px 40px;
     background: linear-gradient(135deg, #111827 0%, #0b1120 100%);
@@ -346,40 +372,26 @@ footer p{
     font-size: 14px;
 }
 
-/* MEDIA RESPONSIVE SYSTEM */
+/* RESPONSIVE LAYOUT */
 @media(max-width: 768px){
-    nav{
-        padding: 15px 30px;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
+    nav{ padding: 15px 30px; }
+    .menu-toggle { display: block; }
 
     nav ul {
         display: none;
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 80px;
-        left: 0;
+        top: 80px; left: 0;
         background: #111827;
         padding: 20px 0;
         box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         border-top: 1px solid #1e293b;
     }
 
-    nav ul.active {
-        display: flex;
-    }
-
-    nav ul li {
-        margin: 12px 0;
-    }
-
-    .section, .gallery-section{
-        padding: 70px 20px;
-    }
+    nav ul.active { display: flex; }
+    nav ul li { margin: 12px 0; }
+    .section, .gallery-section{ padding: 70px 20px; }
 
     .section-title-container {
         flex-direction: column;
@@ -387,14 +399,8 @@ footer p{
         margin-bottom: 40px;
     }
 
-    .overlay h1{
-        font-size: 34px;
-    }
-
-    .gallery img{
-        width: 100%;
-        height: auto;
-    }
+    .overlay h1{ font-size: 34px; }
+    .gallery img{ width: 100%; height: auto; }
 }
 
 @media(min-width: 769px) {
