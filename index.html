@@ -1,55 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CVRU NCC/NSS Portal</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome Icons CDN for premium UI look -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
-  <!-- NAVBAR -->
-  <nav>
-    <div class="logo">
-      <img src="images/logo.png" alt="CVRU Logo">
-      <h2>CVRU NCC/NSS</h2>
-    </div>
-    <!-- Hamburger icon for mobile screens -->
-    <div class="menu-toggle" id="mobile-menu">
-      <i class="fas fa-bars"></i>
-    </div>
-    <ul class="nav-menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#ncc">NCC</a></li>
-      <li><a href="#nss">NSS</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#stats">Our Impact</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="overlay">
-      <h1>WELCOME TO CVRU NCC & NSS PORTAL</h1>
-      <p>Discipline • Leadership • Service</p>
-      <button type="button" id="explore-btn">Explore More</button>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about">
-    <h2>About NCC & NSS</h2>
-    <p>
-      NCC and NSS help students develop discipline, leadership, confidence, and social responsibility. We prepare the youth of today to tackle the challenges of tomorrow.
-    </p>
-  </section>
-
-  <!-- NCC -->
+<!-- NCC SECTION -->
   <section id="ncc" class="section">
-    <h2>NCC SECTION</h2>
+    <!-- Section Title with NCC Logo Container -->
+    <div class="section-title-container">
+      <img src="images/ncc-logo.png" alt="NCC Official Emblem" class="section-logo">
+      <h2>NCC SECTION</h2>
+    </div>
+    
     <div class="cards">
       <div class="card">
         <i class="fas fa-shield-alt card-icon"></i>
@@ -69,14 +25,20 @@
     </div>
   </section>
 
-  <!-- NSS -->
+  <!-- NSS SECTION -->
   <section id="nss" class="section dark">
-    <h2>NSS SECTION</h2>
+    <!-- Section Title with NSS Logo Container -->
+    <div class="section-title-container">
+      <img src="images/nss-logo.png" alt="NSS Official Emblem" class="section-logo">
+      <h2>NSS SECTION</h2>
+    </div>
+    
     <div class="cards">
       <div class="card">
         <i class="fas fa-hands-helping card-icon"></i>
-        <h3>Social Service</h3>
-        <p>Massive plantation drives, rural literacy awareness, and community development work.</p>
+        <!-- Updated: Heading changed from Social Service to Why Join NSS -->
+        <h3>Why Join NSS</h3>
+        <p>Develop a deep sense of selfless social service, appreciate rural community needs, and cultivate democratic leadership.</p>
       </div>
       <div class="card">
         <i class="fas fa-heartbeat card-icon"></i>
@@ -86,54 +48,7 @@
       <div class="card">
         <i class="fas fa-users card-icon"></i>
         <h3>Benefits</h3>
-        <p>Develop empathetic teamwork, dynamic communication skills, and democratic leadership.</p>
+        <p>Develop empathetic teamwork, dynamic communication skills, and lifelong volunteer ethics.</p>
       </div>
     </div>
   </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="gallery-section">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="images/img1.jpg" alt="CVRU Cadets Parade">
-      <img src="images/img2.jpg" alt="CVRU NSS Plantation">
-      <img src="images/img3.jpg" alt="Blood Donation Camp">
-    </div>
-  </section>
-
-  <!-- STATS COUNTER SECTION (NEW FEATURE) -->
-  <section id="stats" class="stats-section">
-    <div class="stat-box">
-      <i class="fas fa-user-friends stat-icon"></i>
-      <h3 class="counter" data-target="350">0</h3>
-      <p>Active Volunteers & Cadets</p>
-    </div>
-    <div class="stat-box">
-      <i class="fas fa-map-marked-alt stat-icon"></i>
-      <h3 class="counter" data-target="28">0</h3>
-      <p>Camps Completed</p>
-    </div>
-    <div class="stat-box">
-      <i class="fas fa-tint stat-icon"></i>
-      <h3 class="counter" data-target="150">0</h3>
-      <p>Blood Units Donated</p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-info">
-      <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:info@cvrubihar.ac.in">info@cvrubihar.ac.in</a></p>
-      <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 CVRU NCC/NSS Portal. All Rights Reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
