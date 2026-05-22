@@ -3,16 +3,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif; /* Fallback fonts updated */
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body{
     background: #0b1120;
     color: white;
-    overflow-x: hidden; /* Page side me scroll na ho phone par */
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Native smooth fallback */
 }
 
-/* NAVBAR */
+/* NAVBAR UPGRADE */
 nav{
     width: 100%;
     display: flex;
@@ -23,7 +24,8 @@ nav{
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Premium look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease;
 }
 
 .logo{
@@ -41,6 +43,9 @@ nav{
     font-size: 22px;
     font-weight: 700;
     letter-spacing: 0.5px;
+    background: linear-gradient(to right, #ffffff, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 nav ul{
@@ -55,34 +60,40 @@ nav ul li{
 
 nav ul li a{
     text-decoration: none;
-    color: #9ca3af; /* Default state me thora soft gray */
+    color: #9ca3af;
     font-size: 16px;
     font-weight: 500;
-    transition: 0.3s ease;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 nav ul li a:hover{
     color: #3b82f6;
 }
 
-/* HERO SECTION */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* HERO UPDATE */
 .hero{
     height: 100vh;
     background: url('images/banner.jpg') no-repeat center center/cover;
-    position: relative; /* Overlay handles relative positioning */
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Fixed: Overlay poori image ko cover karega taaki text hamesha readable rahe */
 .overlay{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(11, 17, 32, 0.75); /* Darker backdrop blending with body */
+    background: rgba(11, 17, 32, 0.78); 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,74 +103,76 @@ nav ul li a:hover{
 }
 
 .overlay h1{
-    font-size: 50px;
+    font-size: 52px;
     font-weight: 800;
     margin-bottom: 20px;
     letter-spacing: 1px;
-    max-width: 800px;
+    max-width: 900px;
+    line-height: 1.2;
 }
 
 .overlay p{
-    font-size: 20px;
-    color: #9ca3af;
-    word-spacing: 3px;
+    font-size: 22px;
+    color: #3b82f6;
+    font-weight: 600;
+    letter-spacing: 2px;
+    word-spacing: 4px;
 }
 
 .overlay button{
-    margin-top: 30px;
-    padding: 14px 35px;
+    margin-top: 35px;
+    padding: 14px 38px;
     border: none;
     background: #2563eb;
     color: white;
-    border-radius: 6px;
+    border-radius: 30px; /* Rounded pill approach */
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
     transition: 0.3s ease;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
 }
 
 .overlay button:hover{
     background: #1d4ed8;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(37, 99, 235, 0.6);
 }
 
-/* ABOUT SECTION */
+/* ABOUT */
 .about{
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto; /* Centered layout for paragraph */
+    max-width: 850px;
+    margin: 0 auto;
 }
 
 .about h2{
-    font-size: 36px;
-    margin-bottom: 20px;
-    position: relative;
+    font-size: 38px;
+    margin-bottom: 25px;
 }
 
 .about p{
-    font-size: 18px;
+    font-size: 19px;
     color: #9ca3af;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
-/* COMMON SECTION STYLES */
+/* SECTIONS & GLASS CARDS */
 .section{
-    padding: 80px 60px;
+    padding: 100px 60px;
 }
 
 .section h2{
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
+    font-size: 38px;
+    margin-bottom: 60px;
 }
 
 .dark{
     background: #111827;
 }
 
-/* CARDS STYLES */
 .cards{
     display: flex;
     justify-content: center;
@@ -169,85 +182,135 @@ nav ul li a:hover{
 
 .card{
     flex: 1;
-    min-width: 280px;
-    max-width: 340px; /* Equal sizes for all cards */
+    min-width: 290px;
+    max-width: 350px;
     background: #1f2937;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #2d3748; /* Subtle border for clean UI */
-    transition: 0.3s ease;
+    padding: 40px 30px;
+    border-radius: 16px;
+    border: 1px solid #2d3748;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.card-icon {
+    font-size: 35px;
+    color: #3b82f6;
+    margin-bottom: 20px;
 }
 
 .card:hover{
-    transform: translateY(-8px);
-    border-color: #3b82f6; /* Hover highlight */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+    border-color: #3b82f6;
+    background: linear-gradient(145deg, #1f2937, #111827);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
 }
 
 .card h3{
     margin-bottom: 15px;
-    color: #60a5fa;
-    font-size: 20px;
+    color: #ffffff;
+    font-size: 22px;
 }
 
 .card p{
     color: #9ca3af;
-    line-height: 1.6;
+    line-height: 1.7;
     font-size: 15px;
 }
 
-/* GALLERY SECTION */
+/* GALLERY UPDATE */
 .gallery-section{
-    padding: 80px 60px;
+    padding: 100px 60px;
 }
 
 .gallery-section h2{
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 36px;
+    margin-bottom: 50px;
+    font-size: 38px;
 }
 
 .gallery{
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
-/* Fixed: Added height & object-fit to maintain identical image ratios */
 .gallery img{
-    width: 350px;
-    height: 230px;
-    object-fit: cover; 
-    border-radius: 12px;
+    width: 360px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #1f2937;
     transition: 0.3s ease;
 }
 
 .gallery img:hover{
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transform: scale(1.04);
+    border-color: #3b82f6;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
 }
 
-/* CONTACT SECTION */
+/* STATS SECTION DESIGN */
+.stats-section{
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #111827 0%, #0b1120 100%);
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    border-top: 1px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
+}
+
+.stat-box{
+    text-align: center;
+    min-width: 200px;
+}
+
+.stat-icon{
+    font-size: 40px;
+    color: #60a5fa;
+    margin-bottom: 15px;
+}
+
+.stat-box h3{
+    font-size: 45px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.stat-box p{
+    color: #9ca3af;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* CONTACT */
 .contact{
     background: #111827;
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
 }
 
 .contact h2{
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 38px;
+    margin-bottom: 30px;
 }
 
-.contact p{
+.contact-info p{
     font-size: 18px;
-    margin-top: 12px;
+    margin-top: 15px;
     color: #9ca3af;
 }
 
-.contact a{
+.contact-info i{
     color: #3b82f6;
+    margin-right: 8px;
+}
+
+.contact a{
+    color: #60a5fa;
     text-decoration: none;
     transition: 0.2s;
 }
@@ -258,50 +321,69 @@ nav ul li a:hover{
 
 /* FOOTER */
 footer{
-    background: #0f172a;
-    padding: 25px 20px;
+    background: #090d16;
+    padding: 30px 20px;
     text-align: center;
     border-top: 1px solid #1e293b;
 }
 
 footer p{
-    color: #6b7280;
+    color: #4b5563;
     font-size: 14px;
 }
 
-/* RESPONSIVE DESIGN (MOBILE OPTIMIZATION) */
+/* DYNAMIC RESPONSIVE BREAKPOINTS */
 @media(max-width: 768px){
     nav{
-        padding: 15px 20px;
+        padding: 15px 30px;
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger button */
+    }
+
+    /* Hide links menu by default on mobile layout */
+    nav ul {
+        display: none;
         flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul{
-        margin-top: 15px;
         width: 100%;
-        justify-content: center;
-        flex-wrap: wrap; /* Chote screens par links wrap ho sakein */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background: #111827;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        border-top: 1px solid #1e293b;
     }
 
-    nav ul li{
-        margin: 5px 12px; /* Fixed: Stack vertical or horizontal uniformly */
+    /* Target state class triggered via JS toggle */
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 12px 0;
     }
 
     .section, .gallery-section{
-        padding: 60px 20px; /* Reduced padding on small screens */
+        padding: 70px 20px;
     }
 
     .overlay h1{
-        font-size: 32px;
+        font-size: 34px;
     }
     
     .overlay p{
         font-size: 16px;
+        letter-spacing: 1px;
     }
 
     .gallery img{
         width: 100%;
-        height: auto; /* Fluid height on mobile */
+        height: auto;
+    }
+    
+    .stats-section {
+        gap: 40px;
     }
 }
